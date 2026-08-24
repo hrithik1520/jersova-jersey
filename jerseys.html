@@ -102,8 +102,14 @@
     <button class="lightbox-close" id="lbClose">✕</button>
     <button class="lightbox-prev" id="lbPrev">←</button>
     <button class="lightbox-next" id="lbNext">→</button>
-    <img id="lbImg" src="" alt="">
-    <div class="lightbox-cap"><span id="lbTitle"></span><span id="lbSub"></span></div>
+    <div class="lightbox-imgbox"><img id="lbImg" src="" alt=""></div>
+    <div class="lightbox-tag" id="lbTag"></div>
+    <div class="lightbox-cap" id="lbTitle"></div>
+    <p class="lightbox-desc" id="lbDesc"></p>
+    <div class="lightbox-actions">
+      <a href="contact.html" class="btn btn-primary" id="lbCta">Enquire About This Design</a>
+      <button class="btn btn-ghost" id="lbClose2">Close</button>
+    </div>
   </div>
 </div>
 
@@ -114,10 +120,14 @@
       <div class="footer-brand">
         <a href="index.html" class="brand"><img src="images/logo.png" alt="logo"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
         <p>Custom sports jerseys, shorts and pants — sublimated, sewn and shipped for teams that play to win.</p>
+        <div class="footer-contact">
+          <a href="mailto:jersovajersey@gmail.com">jersovajersey@gmail.com</a>
+          <a href="tel:+919845142893">+91 98451 42893</a>
+        </div>
         <div class="social">
           <a href="#" aria-label="Instagram">IG</a>
           <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="WhatsApp">WA</a>
+          <a href="https://wa.me/919845142893" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
         </div>
       </div>
       <div class="fcol">
@@ -150,6 +160,7 @@
   </div>
 </footer>
 
+<a class="whatsapp-fab" href="https://wa.me/919845142893?text=Hi%20Jersova%20Jersey%2C%20I%27d%20like%20to%20know%20more%20about%20custom%20kits." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.346 4.997L2 22l5.128-1.345a9.96 9.96 0 004.876 1.242h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.182-2.929-7.07a9.935 9.935 0 00-7.072-2.928zm0 18.174h-.003a8.148 8.148 0 01-4.15-1.135l-.298-.177-3.048.8.813-2.97-.194-.306a8.15 8.15 0 01-1.252-4.386c0-4.508 3.67-8.176 8.185-8.176 2.185 0 4.24.85 5.786 2.397a8.13 8.13 0 012.396 5.79c-.002 4.508-3.67 8.163-8.235 8.163z"/></svg></a>
 <button class="totop" id="totop" aria-label="Back to top">↑</button>
 
 <script src="js/common.js"></script>
@@ -229,9 +240,16 @@ sleeveTabs.querySelectorAll('.tab-btn').forEach(btn=>{
 });
 renderCatalog();
 
-/* ============ LIGHTBOX ============ */
+/* ============ LIGHTBOX (product preview) ============ */
 const lightbox=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
-const lbTitle=document.getElementById('lbTitle'), lbSub=document.getElementById('lbSub');
+const lbTitle=document.getElementById('lbTitle'), lbTag=document.getElementById('lbTag');
+const lbDesc=document.getElementById('lbDesc'), lbCta=document.getElementById('lbCta');
+const catLabel={tshirt:'T-Shirt',shorts:'Shorts',pants:'Pants'};
+const catDesc={
+  tshirt:'Fully sublimated performance jersey — breathable, moisture-wicking fabric with your team colors, crest and player names included.',
+  shorts:'Lightweight match-day shorts built to move with your team, fully customizable to your colorway.',
+  pants:'All-weather training pants for warm-ups and travel, sublimated to match your kit.'
+};
 let lbIdx=0;
 function openLightbox(i){
   lbIdx=i;
@@ -241,11 +259,15 @@ function openLightbox(i){
 function updateLightbox(){
   const item=currentList[lbIdx];
   lbImg.src=item.src; lbImg.alt=item.name;
+  lbTag.textContent=`Jersova ${catLabel[item.cat]||item.cat}`;
   lbTitle.textContent=item.name;
-  lbSub.textContent=`Jersova ${item.cat} — click outside or ✕ to close`;
+  lbDesc.textContent=catDesc[item.cat]||'Custom fit & colorway available.';
+  lbCta.href=`contact.html?design=${encodeURIComponent(item.name)}`;
 }
-document.getElementById('lbClose').addEventListener('click',()=>lightbox.classList.remove('open'));
-lightbox.addEventListener('click',e=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
+function closeLightbox(){lightbox.classList.remove('open');}
+document.getElementById('lbClose').addEventListener('click',closeLightbox);
+document.getElementById('lbClose2').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{ if(e.target===lightbox) closeLightbox(); });
 document.getElementById('lbNext').addEventListener('click',()=>{ lbIdx=(lbIdx+1)%currentList.length; updateLightbox(); });
 document.getElementById('lbPrev').addEventListener('click',()=>{ lbIdx=(lbIdx-1+currentList.length)%currentList.length; updateLightbox(); });
 document.addEventListener('keydown',e=>{
