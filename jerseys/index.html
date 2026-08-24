@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jersey Catalog — Jersova Jersey</title>
+<meta name="description" content="Browse the full Jersova Jersey catalog — 150+ custom jerseys, shorts and pants designs.">
+<link rel="icon" href="/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="noise-layer"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div id="loader">
+  <div class="loader-logo">JJ</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <a href="/" class="brand">
+        <img src="/images/logo.png" alt="Jersova Jersey logo">
+        <span>Jersova Jersey<small>Wear Your Identity</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/jerseys/" class="active">Jerseys</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="/contact/" class="btn btn-primary"><span class="shine"></span>Get a Quote</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Home</a>
+  <a href="/jerseys/">Jerseys</a>
+  <a href="/about/">About Us</a>
+  <a href="/contact/">Contact</a>
+</div>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-card">
+      <div class="hero-bg" style="background-image:url('/images/catalog/jerseys/50.webp');"></div>
+      <div class="hero-scrim"></div>
+      <div class="page-hero-inner" data-reveal>
+        <div class="eyebrow">The Full Catalog</div>
+        <h1>Every Design.<br>Every Colorway.</h1>
+        <p>157 sublimated jerseys, shorts and pants — ready to be customized with your team's colors, crest and player names.</p>
+        <div class="breadcrumb"><a href="/">Home</a><span>/</span><span>Jerseys</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOG ============ -->
+<section class="section-pad" style="padding-top:20px;">
+  <div class="container">
+    <div class="tabs" data-reveal>
+      <button class="tab-btn active" data-cat="tshirt">T-Shirts (85)</button>
+      <button class="tab-btn" data-cat="shorts">Shorts (38)</button>
+      <button class="tab-btn" data-cat="pants">Pants (34)</button>
+    </div>
+    <div class="tabs show" id="sleeveTabs" data-reveal>
+      <button class="tab-btn active" data-sleeve="all">All T-Shirts (85)</button>
+      <button class="tab-btn" data-sleeve="short">Half Sleeves (75)</button>
+      <button class="tab-btn" data-sleeve="long">Full Sleeves (10)</button>
+    </div>
+    <p class="catalog-count" data-reveal>Showing <b id="catCount">85</b> designs</p>
+    <div class="grid-products dense grid-fade" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section-pad" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner" data-reveal="scale">
+      <h2>Can't Decide?<br>Let's Design One Together.</h2>
+      <p>Send us your team colors and crest — our designers will build a custom mockup free of charge within 48 hours.</p>
+      <a href="/contact/" class="btn btn-primary" style="background:#fff;color:var(--primary-strong);">Start Your Design</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lbClose">✕</button>
+    <button class="lightbox-prev" id="lbPrev">←</button>
+    <button class="lightbox-next" id="lbNext">→</button>
+    <div class="lightbox-imgbox"><img id="lbImg" src="" alt=""></div>
+    <div class="lightbox-tag" id="lbTag"></div>
+    <div class="lightbox-cap" id="lbTitle"></div>
+    <p class="lightbox-desc" id="lbDesc"></p>
+    <div class="lightbox-actions">
+      <a href="/contact/" class="btn btn-primary" id="lbCta">Enquire About This Design</a>
+      <button class="btn btn-ghost" id="lbClose2">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand"><img src="/images/logo.png" alt="logo"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
+        <p>Custom sports jerseys, shorts and pants — sublimated, sewn and shipped for teams that play to win.</p>
+        <div class="footer-contact">
+          <a href="mailto:jersovajersey@gmail.com">jersovajersey@gmail.com</a>
+          <a href="tel:+919845142893">+91 98451 42893</a>
+        </div>
+        <div class="social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="https://wa.me/919845142893" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h5>Shop</h5>
+        <a href="/jerseys/">Jerseys</a>
+        <a href="/jerseys/">Shorts</a>
+        <a href="/jerseys/">Pants</a>
+        <a href="/jerseys/">Team Kits</a>
+      </div>
+      <div class="fcol">
+        <h5>Company</h5>
+        <a href="/about/">About Us</a>
+        <a href="/about/">Our Process</a>
+        <a href="/#testimonials">Reviews</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Stay Updated</h5>
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px;">New designs, drops and team offers — straight to your inbox.</p>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jersova Jersey. All rights reserved.</span>
+      <span>Wear Your Identity ★★★</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/919845142893?text=Hi%20Jersova%20Jersey%2C%20I%27d%20like%20to%20know%20more%20about%20custom%20kits." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.346 4.997L2 22l5.128-1.345a9.96 9.96 0 004.876 1.242h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.182-2.929-7.07a9.935 9.935 0 00-7.072-2.928zm0 18.174h-.003a8.148 8.148 0 01-4.15-1.135l-.298-.177-3.048.8.813-2.97-.194-.306a8.15 8.15 0 01-1.252-4.386c0-4.508 3.67-8.176 8.185-8.176 2.185 0 4.24.85 5.786 2.397a8.13 8.13 0 012.396 5.79c-.002 4.508-3.67 8.163-8.235 8.163z"/></svg></a>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script src="/js/common.js"></script>
+<script>
+/* ============ CATALOG DATA ============ */
+// t-shirt source folders (jerseys + front) merged into one "tshirt" category, tagged by sleeve length
+const sleeveMap = {
+  jerseys: {"01":"short","02":"short","03":"short","04":"short","05":"short","06":"short","07":"short","08":"short","09":"short","10":"short","11":"short","12":"short","13":"short","14":"short","15":"short","16":"short","17":"short","18":"short","19":"short","20":"short","21":"short","22":"short","23":"short","24":"short","25":"short","26":"short","27":"short","28":"short","29":"short","30":"short","31":"short","32":"short","33":"short","34":"short","35":"short","36":"short","36 (Edited)":"short","37":"short","38":"short","39":"short","40":"short","41":"short","42":"short","43":"short","44":"short","45":"short","46":"short","47":"short","49":"short","50":"short","51":"long","52":"long","53":"long","54":"long","55":"long","56":"long","57":"long","58":"long","59":"long","60":"long"},
+  front: {"01":"short","02":"short","03":"short","04":"short","05":"short","06":"short","07":"short","08":"short","09":"short","10":"short","21":"short","22":"short","23":"short","24":"short","25":"short","26":"short","27":"short","28":"short","29":"short","30":"short","a1":"short","a2":"short","a3":"short","a4":"short","a5":"short"}
+};
+const shortsIds = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38'];
+const pantsIds  = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34'];
+
+let allItems = [];
+['jerseys','front'].forEach(folder=>{
+  Object.keys(sleeveMap[folder]).forEach(id=>{
+    allItems.push({ cat:'tshirt', sleeve:sleeveMap[folder][id], src:`/images/catalog/${folder}/${id}.webp`, name:`${sleeveMap[folder][id]==='long'?'Full Sleeve':'Half Sleeve'} Jersey ${id}` });
+  });
+});
+shortsIds.forEach(id=>allItems.push({ cat:'shorts', sleeve:null, src:`/images/catalog/shorts/${id}.webp`, name:`Shorts ${id}` }));
+pantsIds.forEach(id=>allItems.push({ cat:'pants', sleeve:null, src:`/images/catalog/pants/${id}.webp`, name:`Training Pants ${id}` }));
+
+const grid = document.getElementById('catalogGrid');
+const catCount = document.getElementById('catCount');
+const sleeveTabs = document.getElementById('sleeveTabs');
+let currentList = allItems.filter(i=>i.cat==='tshirt');
+let activeCat = 'tshirt', activeSleeve = 'all';
+
+function renderCatalog(){
+  currentList = allItems.filter(i=>i.cat===activeCat);
+  if(activeCat==='tshirt' && activeSleeve!=='all'){
+    currentList = currentList.filter(i=>i.sleeve===activeSleeve);
+  }
+  catCount.textContent = currentList.length;
+  grid.classList.remove('grid-fade'); void grid.offsetWidth; grid.classList.add('grid-fade');
+  grid.innerHTML = currentList.map((item,i)=>`
+    <div class="card" data-idx="${i}">
+      <div class="imgbox"><img src="${item.src}" alt="${item.name}" loading="lazy"></div>
+      <div class="view-btn">↗</div>
+      <div class="info">
+        <div class="tag">Jersova ${item.cat}</div>
+        <h4>${item.name}</h4>
+        <p>Custom fit &amp; colorway available</p>
+      </div>
+    </div>`).join('');
+  grid.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`rotateY(${px*8}deg) rotateX(${-py*8}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='rotateY(0) rotateX(0) translateY(0)';});
+    card.addEventListener('click',()=>openLightbox(+card.dataset.idx));
+  });
+  if(window.bindCursorHover) window.bindCursorHover();
+}
+
+document.querySelectorAll('.tabs:not(#sleeveTabs) .tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tabs:not(#sleeveTabs) .tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat;
+    activeSleeve = 'all';
+    sleeveTabs.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    sleeveTabs.querySelector('[data-sleeve="all"]').classList.add('active');
+    sleeveTabs.classList.toggle('show', activeCat==='tshirt');
+    renderCatalog();
+  });
+});
+sleeveTabs.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    sleeveTabs.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeSleeve = btn.dataset.sleeve;
+    renderCatalog();
+  });
+});
+renderCatalog();
+
+/* ============ LIGHTBOX (product preview) ============ */
+const lightbox=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+const lbTitle=document.getElementById('lbTitle'), lbTag=document.getElementById('lbTag');
+const lbDesc=document.getElementById('lbDesc'), lbCta=document.getElementById('lbCta');
+const catLabel={tshirt:'T-Shirt',shorts:'Shorts',pants:'Pants'};
+const catDesc={
+  tshirt:'Fully sublimated performance jersey — breathable, moisture-wicking fabric with your team colors, crest and player names included.',
+  shorts:'Lightweight match-day shorts built to move with your team, fully customizable to your colorway.',
+  pants:'All-weather training pants for warm-ups and travel, sublimated to match your kit.'
+};
+let lbIdx=0;
+function openLightbox(i){
+  lbIdx=i;
+  updateLightbox();
+  lightbox.classList.add('open');
+}
+function updateLightbox(){
+  const item=currentList[lbIdx];
+  lbImg.src=item.src; lbImg.alt=item.name;
+  lbTag.textContent=`Jersova ${catLabel[item.cat]||item.cat}`;
+  lbTitle.textContent=item.name;
+  lbDesc.textContent=catDesc[item.cat]||'Custom fit & colorway available.';
+  const imgUrl=`${window.location.origin}${item.src}`;
+  const waText=`Hi Jersova Jersey, I'm interested in the "${item.name}" design.\n\nView design: ${imgUrl}\n\nPlease share pricing and customization options.`;
+  lbCta.href=`https://wa.me/919845142893?text=${encodeURIComponent(waText)}`;
+  lbCta.target='_blank';
+  lbCta.rel='noopener';
+}
+function closeLightbox(){lightbox.classList.remove('open');}
+document.getElementById('lbClose').addEventListener('click',closeLightbox);
+document.getElementById('lbClose2').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{ if(e.target===lightbox) closeLightbox(); });
+document.getElementById('lbNext').addEventListener('click',()=>{ lbIdx=(lbIdx+1)%currentList.length; updateLightbox(); });
+document.getElementById('lbPrev').addEventListener('click',()=>{ lbIdx=(lbIdx-1+currentList.length)%currentList.length; updateLightbox(); });
+document.addEventListener('keydown',e=>{
+  if(!lightbox.classList.contains('open')) return;
+  if(e.key==='Escape') lightbox.classList.remove('open');
+  if(e.key==='ArrowRight') document.getElementById('lbNext').click();
+  if(e.key==='ArrowLeft') document.getElementById('lbPrev').click();
+});
+</script>
+</body>
+</html>
