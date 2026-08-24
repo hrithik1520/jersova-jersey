@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Jersova Jersey</title>
+<meta name="description" content="Get in touch with Jersova Jersey for a free custom kit mockup — jerseys, shorts and pants for teams worldwide.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="noise-layer"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div id="loader">
+  <div class="loader-logo">JJ</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Jersova Jersey logo">
+        <span>Jersova Jersey<small>Wear Your Identity</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jerseys.html">Jerseys</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary"><span class="shine"></span>Get a Quote</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="jerseys.html">Jerseys</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-card">
+      <div class="hero-bg" style="background-image:url('images/catalog/jerseys/25.webp');"></div>
+      <div class="hero-scrim"></div>
+      <div class="page-hero-inner" data-reveal>
+        <div class="eyebrow">Let's Talk Kit</div>
+        <h1>Get A Free<br>Design Mockup.</h1>
+        <p>Tell us about your team and colors — we'll reply within one business day with a free digital proof.</p>
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT GRID ============ -->
+<section class="section-pad" style="padding-top:20px;">
+  <div class="container contact-grid">
+
+    <div class="contact-info-col" data-reveal="left">
+      <div class="eyebrow">Reach Us</div>
+      <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.4rem);">Talk To The Team.</h2>
+      <div style="margin-top:30px;">
+        <div class="info-card">
+          <div class="ic">✉</div>
+          <div><h4>Email</h4><p>hello@jersovajersey.com</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ic">☎</div>
+          <div><h4>Phone / WhatsApp</h4><p>+1 (555) 019-2244</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ic">⌖</div>
+          <div><h4>Studio</h4><p>128 Stadium Row, Unit 4, Sportstown</p></div>
+        </div>
+        <div class="info-card">
+          <div class="ic">◷</div>
+          <div><h4>Hours</h4><p>Mon–Sat, 9:00 AM – 7:00 PM</p></div>
+        </div>
+      </div>
+      <div class="map-box">
+        <div class="pin"></div>
+        <span>128 Stadium Row, Sportstown</span>
+      </div>
+    </div>
+
+    <div data-reveal="right">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <input type="text" name="name" required>
+            <label>Full Name</label>
+          </div>
+          <div class="field">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <input type="text" name="team" required>
+            <label>Team / Club Name</label>
+          </div>
+          <div class="field">
+            <select name="product" required>
+              <option value="" disabled selected hidden></option>
+              <option>Jerseys</option>
+              <option>Shorts</option>
+              <option>Pants</option>
+              <option>Full Kit</option>
+            </select>
+            <label>What Do You Need?</label>
+          </div>
+        </div>
+        <div class="field field-message">
+          <textarea name="message" required></textarea>
+          <label>Tell Us About Your Colors &amp; Crest</label>
+        </div>
+        <p class="form-note">We typically respond within 24 hours with a free digital mockup.</p>
+        <button type="submit" class="btn btn-primary"><span class="shine"></span>Send Message</button>
+        <div class="form-success" id="formSuccess">✓ Thanks! Your message has been received — we'll be in touch shortly.</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-pad" style="padding-top:0;">
+  <div class="container" style="max-width:760px;">
+    <div data-reveal style="text-align:center;margin-bottom:40px;">
+      <div class="eyebrow" style="justify-content:center;">FAQ</div>
+      <h2 class="section-title">Common <em>Questions.</em></h2>
+    </div>
+    <div id="faqList">
+      <div class="faq">
+        <div class="faq-q"><span>What's the minimum order quantity?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>There's no strict minimum — we've produced single jerseys and full 40-player academy orders. Bulk pricing kicks in from 10+ units.</p></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q"><span>Can I use my own design instead of a template?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Absolutely. Send your artwork, colors or reference images and our designers will build a fully custom mockup around it.</p></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q"><span>How long does production take?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Most orders ship within 2–3 weeks of design approval, depending on order size and season demand.</p></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q"><span>Do you ship internationally?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes — we currently ship to 24 countries with tracked delivery included on every order.</p></div>
+      </div>
+      <div class="faq">
+        <div class="faq-q"><span>Are names, numbers and crests included?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Yes, player names, squad numbers and club crests are included at no extra cost on every jersey.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="images/logo.png" alt="logo"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
+        <p>Custom sports jerseys, shorts and pants — sublimated, sewn and shipped for teams that play to win.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h5>Shop</h5>
+        <a href="jerseys.html">Jerseys</a>
+        <a href="jerseys.html">Shorts</a>
+        <a href="jerseys.html">Pants</a>
+        <a href="jerseys.html">Team Kits</a>
+      </div>
+      <div class="fcol">
+        <h5>Company</h5>
+        <a href="about.html">About Us</a>
+        <a href="about.html">Our Process</a>
+        <a href="index.html#testimonials">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Stay Updated</h5>
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px;">New designs, drops and team offers — straight to your inbox.</p>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jersova Jersey. All rights reserved.</span>
+      <span>Wear Your Identity ★★★</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script src="js/common.js"></script>
+<script>
+/* ============ CONTACT FORM ============ */
+const contactForm=document.getElementById('contactForm');
+const formSuccess=document.getElementById('formSuccess');
+contactForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  formSuccess.classList.add('show');
+  contactForm.querySelectorAll('input,textarea,select').forEach(el=>el.blur());
+  setTimeout(()=>{ contactForm.reset(); },50);
+});
+
+/* ============ FAQ ACCORDION ============ */
+document.querySelectorAll('.faq').forEach(item=>{
+  const q=item.querySelector('.faq-q'), a=item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq').forEach(f=>{f.classList.remove('open');f.querySelector('.faq-a').style.maxHeight=null;});
+    if(!isOpen){ item.classList.add('open'); a.style.maxHeight=a.scrollHeight+'px'; }
+  });
+});
+</script>
+</body>
+</html>

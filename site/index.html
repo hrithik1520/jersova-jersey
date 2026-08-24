@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jersova Jersey — Wear Your Identity</title>
+<meta name="description" content="Custom sports jerseys, shorts and pants built for teams that play to win. Jersova Jersey — Wear Your Identity.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="noise-layer"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<div id="loader">
+  <div class="loader-logo">JJ</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="Jersova Jersey logo">
+        <span>Jersova Jersey<small>Wear Your Identity</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="jerseys.html">Jerseys</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary"><span class="shine"></span>Get a Quote</a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="jerseys.html">Jerseys</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Custom Team Sportswear</div>
+      <h1 class="hero-title">
+        <span class="line"><span>WEAR YOUR</span></span>
+        <span class="line"><span>IDENTITY.</span></span>
+        <span class="line"><span>OWN THE GAME.</span></span>
+      </h1>
+      <p class="lead">Jersova Jersey designs and manufactures fully custom jerseys, shorts and training pants — built for teams, clubs and athletes who never settle for stock gear.</p>
+      <div class="btn-row">
+        <a href="jerseys.html" class="btn btn-primary">Explore Collection</a>
+        <a href="contact.html" class="btn btn-ghost">Design My Kit</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <div class="hero-card">
+        <div class="hero-slideshow" id="heroSlideshow">
+          <img class="slide active" src="images/hero.webp" alt="Jersova Jersey custom football kit">
+          <img class="slide" src="images/catalog/jerseys/25.webp" alt="Star Strike jersey">
+          <img class="slide" src="images/catalog/jerseys/50.webp" alt="Skyline Hex jersey">
+          <img class="slide" src="images/catalog/jerseys/35.webp" alt="Blue Volt jersey">
+          <img class="slide" src="images/catalog/jerseys/02.webp" alt="Hex Combat jersey">
+          <img class="slide" src="images/catalog/jerseys/60.webp" alt="Cross Plaid jersey">
+        </div>
+        <div class="hero-slideshow-dots" id="heroDots"></div>
+      </div>
+      <div class="hero-badge badge-1">Made to Order <b>100%</b></div>
+      <div class="hero-badge badge-2">Teams Outfitted <b>1,200+</b></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="stick"></div></div>
+</section>
+
+<!-- ============ IMAGE GALLERY STRIP ============ -->
+<div class="container">
+  <div class="bleed-strip">
+    <div class="bleed-tile"><img src="images/catalog/jerseys/25.webp" alt="Star Strike jersey" loading="lazy"><div class="bleed-cap">Star Strike</div></div>
+    <div class="bleed-tile"><img src="images/catalog/jerseys/50.webp" alt="Skyline Hex jersey" loading="lazy"><div class="bleed-cap">Skyline Hex</div></div>
+    <div class="bleed-tile"><img src="images/catalog/jerseys/02.webp" alt="Hex Combat jersey" loading="lazy"><div class="bleed-cap">Hex Combat</div></div>
+    <div class="bleed-tile"><img src="images/catalog/jerseys/60.webp" alt="Cross Plaid jersey" loading="lazy"><div class="bleed-cap">Cross Plaid</div></div>
+  </div>
+</div>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span><i></i>Custom Jerseys<i></i>Team Kits<i></i>Full Sublimation<i></i>Shorts &amp; Pants<i></i>Any Colorway<i></i>Fast Turnaround</span>
+    <span><i></i>Custom Jerseys<i></i>Team Kits<i></i>Full Sublimation<i></i>Shorts &amp; Pants<i></i>Any Colorway<i></i>Fast Turnaround</span>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="stats" data-reveal="scale">
+      <div class="stat"><div class="num" data-count="1200">0</div><div class="lbl">Teams Outfitted</div></div>
+      <div class="stat"><div class="num" data-count="157">0</div><div class="lbl">Jersey Designs</div></div>
+      <div class="stat"><div class="num" data-count="24">0</div><div class="lbl">Countries Shipped</div></div>
+      <div class="stat"><div class="num" data-count="8">0</div><div class="lbl">Years of Craft</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="section-pad" id="collection">
+  <div class="container">
+    <div data-reveal>
+      <div class="eyebrow">Featured Designs</div>
+      <h2 class="section-title">Kits Built For <em>Every Match.</em></h2>
+      <p class="section-sub">A glimpse of our sublimated jerseys — explore the full catalog of 150+ designs including shorts and pants.</p>
+    </div>
+
+    <div class="grid-products grid-fade" id="productGrid" style="margin-top:44px;"></div>
+
+    <div style="text-align:center;margin-top:50px;" data-reveal>
+      <a href="jerseys.html" class="btn btn-primary"><span class="shine"></span>View Full Catalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section-pad" id="why">
+  <div class="container">
+    <div data-reveal style="text-align:center;margin:0 auto 50px;">
+      <div class="eyebrow" style="justify-content:center;">Why Jersova</div>
+      <h2 class="section-title">Built Different, <em>On Purpose.</em></h2>
+    </div>
+    <div class="features">
+      <div class="feature" data-reveal="scale">
+        <div class="icon">✦</div>
+        <h4>100% Custom Sublimation</h4>
+        <p>No templates you're locked into — every panel, gradient and pattern is designed around your team's colors.</p>
+      </div>
+      <div class="feature" data-reveal="scale" style="transition-delay:.1s">
+        <div class="icon">⚡</div>
+        <h4>Performance Fabric</h4>
+        <p>Lightweight, breathable, moisture-wicking fabric engineered to move with athletes through 90 minutes and beyond.</p>
+      </div>
+      <div class="feature" data-reveal="scale" style="transition-delay:.2s">
+        <div class="icon">◈</div>
+        <h4>Free Design Proofs</h4>
+        <p>Our in-house designers mock up your kit before production — unlimited revisions until it's exactly right.</p>
+      </div>
+      <div class="feature" data-reveal="scale">
+        <div class="icon">▲</div>
+        <h4>Team Bulk Pricing</h4>
+        <p>The bigger the squad, the better the price. Transparent bulk tiers with no hidden setup fees.</p>
+      </div>
+      <div class="feature" data-reveal="scale" style="transition-delay:.1s">
+        <div class="icon">✧</div>
+        <h4>Fast Turnaround</h4>
+        <p>From approved design to delivery, most orders ship within 2–3 weeks worldwide.</p>
+      </div>
+      <div class="feature" data-reveal="scale" style="transition-delay:.2s">
+        <div class="icon">◆</div>
+        <h4>Name, Number &amp; Crest</h4>
+        <p>Player names, squad numbers and club crests included on every jersey at no extra cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section-pad process" id="process">
+  <div class="container">
+    <div data-reveal style="text-align:center;margin-bottom:60px;">
+      <div class="eyebrow" style="justify-content:center;">How It Works</div>
+      <h2 class="section-title">From Sketch <em>To Sideline.</em></h2>
+    </div>
+    <div style="position:relative;">
+      <div class="process-line"><div class="process-line-fill" id="processFill"></div></div>
+      <div class="process-steps">
+        <div class="step" data-reveal="scale"><div class="n">01</div><h4>Share Your Vision</h4><p>Tell us your colors, crest and style — or pick from our 150+ ready templates.</p></div>
+        <div class="step" data-reveal="scale" style="transition-delay:.1s"><div class="n">02</div><h4>Get A Free Mockup</h4><p>Our designers send a full digital proof within 48 hours, revisions included.</p></div>
+        <div class="step" data-reveal="scale" style="transition-delay:.2s"><div class="n">03</div><h4>We Sublimate &amp; Sew</h4><p>Your kit is printed, cut and sewn to size using premium performance fabric.</p></div>
+        <div class="step" data-reveal="scale" style="transition-delay:.3s"><div class="n">04</div><h4>Delivered To You</h4><p>Packed and shipped worldwide, tracked door-to-door.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section-pad" id="testimonials">
+  <div class="container">
+    <div data-reveal style="text-align:center;margin-bottom:20px;">
+      <div class="eyebrow" style="justify-content:center;">Testimonials</div>
+      <h2 class="section-title">Trusted By <em>Real Teams.</em></h2>
+    </div>
+    <div class="testi-wrap" data-reveal>
+      <div class="testi active">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Jersova redesigned our club kit from scratch — the fit, the fabric, the colors, everything felt premium. Our whole squad was hyped on match day."</p>
+        <div class="who">— Marcus D., Club Captain</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We ordered 22 jerseys plus shorts for our academy. Turnaround was faster than promised and the sublimation quality is honestly next level."</p>
+        <div class="who">— Priya S., Academy Director</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Free mockups saved us from a color mistake before print. Communication was smooth start to finish — will reorder every season."</p>
+        <div class="who">— Diego R., Team Manager</div>
+      </div>
+      <div class="testi-dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="cta-banner" data-reveal="scale">
+      <h2>Ready To Design<br>Your Team's Kit?</h2>
+      <p>Get a free digital mockup within 48 hours — no commitment, no hidden costs. Just tell us your colors and crest.</p>
+      <a href="contact.html" class="btn btn-primary" style="background:#fff;color:var(--primary-strong);">Start Your Design</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><img src="images/logo.png" alt="logo"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
+        <p>Custom sports jerseys, shorts and pants — sublimated, sewn and shipped for teams that play to win.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h5>Shop</h5>
+        <a href="jerseys.html">Jerseys</a>
+        <a href="jerseys.html">Shorts</a>
+        <a href="jerseys.html">Pants</a>
+        <a href="jerseys.html">Team Kits</a>
+      </div>
+      <div class="fcol">
+        <h5>Company</h5>
+        <a href="about.html">About Us</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#testimonials">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="fcol">
+        <h5>Stay Updated</h5>
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px;">New designs, drops and team offers — straight to your inbox.</p>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jersova Jersey. All rights reserved.</span>
+      <span>Wear Your Identity ★★★</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+
+<script src="js/common.js"></script>
+<script>
+/* ============ PROCESS LINE FILL ============ */
+const processFill=document.getElementById('processFill');
+const processSection=document.querySelector('.process');
+const procIO=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){processFill.style.width='100%'; procIO.unobserve(en.target);} });
+},{threshold:.35});
+procIO.observe(processSection);
+
+/* ============ FEATURED PRODUCT GRID ============ */
+const featured=[
+  {img:'catalog/jerseys/01',name:'Fractal Frost',tag:'Jersey'},
+  {img:'catalog/jerseys/05',name:'Hex Combat',tag:'Jersey'},
+  {img:'catalog/jerseys/15',name:'Tidal Fade',tag:'Jersey'},
+  {img:'catalog/jerseys/25',name:'Star Strike',tag:'Jersey'},
+  {img:'catalog/jerseys/35',name:'Blue Volt',tag:'Jersey'},
+  {img:'catalog/jerseys/50',name:'Skyline Hex',tag:'Jersey'},
+  {img:'catalog/jerseys/60',name:'Cross Plaid',tag:'Jersey'},
+  {img:'catalog/jerseys/02',name:'Shatterline',tag:'Jersey'},
+];
+document.getElementById('productGrid').innerHTML=featured.map(p=>`
+  <a href="jerseys.html" class="card" style="cursor:none;">
+    <div class="imgbox"><img src="images/${p.img}.webp" alt="${p.name}" loading="lazy"></div>
+    <div class="view-btn">↗</div>
+    <div class="info">
+      <div class="tag">Jersova ${p.tag}</div>
+      <h4>${p.name}</h4>
+      <p>Fully sublimated performance fabric</p>
+    </div>
+  </a>`).join('');
+document.querySelectorAll('#productGrid .card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`rotateY(${px*10}deg) rotateX(${-py*10}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='rotateY(0) rotateX(0) translateY(0)';});
+});
+if(window.bindCursorHover) window.bindCursorHover();
+
+/* ============ TESTIMONIAL SLIDER ============ */
+const testis=document.querySelectorAll('.testi');
+const dotsWrap=document.getElementById('testiDots');
+testis.forEach((_,i)=>{
+  const b=document.createElement('button');
+  if(i===0)b.classList.add('active');
+  b.addEventListener('click',()=>showTesti(i));
+  dotsWrap.appendChild(b);
+});
+let testiIdx=0;
+function showTesti(i){
+  testis[testiIdx].classList.remove('active');
+  dotsWrap.children[testiIdx].classList.remove('active');
+  testiIdx=i;
+  testis[testiIdx].classList.add('active');
+  dotsWrap.children[testiIdx].classList.add('active');
+}
+setInterval(()=>{showTesti((testiIdx+1)%testis.length);},5000);
+
+/* ============ HERO JERSEY SLIDESHOW ============ */
+const heroSlides=document.querySelectorAll('#heroSlideshow .slide');
+const heroDots=document.getElementById('heroDots');
+heroSlides.forEach((_,i)=>{
+  const d=document.createElement('span');
+  if(i===0)d.classList.add('active');
+  d.addEventListener('click',()=>showHeroSlide(i));
+  heroDots.appendChild(d);
+});
+let heroSlideIdx=0;
+function showHeroSlide(i){
+  heroSlides[heroSlideIdx].classList.remove('active');
+  heroDots.children[heroSlideIdx].classList.remove('active');
+  heroSlideIdx=i;
+  heroSlides[heroSlideIdx].classList.add('active');
+  heroDots.children[heroSlideIdx].classList.add('active');
+}
+setInterval(()=>{showHeroSlide((heroSlideIdx+1)%heroSlides.length);},2800);
+
+/* ============ HERO PARALLAX ============ */
+const heroCard=document.querySelector('.hero .hero-card');
+document.querySelector('.hero').addEventListener('mousemove',e=>{
+  const r=e.currentTarget.getBoundingClientRect();
+  const px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+  heroCard.style.transform=`translate(${px*16}px, ${py*16}px)`;
+});
+</script>
+</body>
+</html>
