@@ -262,7 +262,11 @@ function updateLightbox(){
   lbTag.textContent=`Jersova ${catLabel[item.cat]||item.cat}`;
   lbTitle.textContent=item.name;
   lbDesc.textContent=catDesc[item.cat]||'Custom fit & colorway available.';
-  lbCta.href=`contact.html?design=${encodeURIComponent(item.name)}`;
+  const imgUrl=`${window.location.origin}/${item.src}`;
+  const waText=`Hi Jersova Jersey, I'm interested in the "${item.name}" design.\n\nView design: ${imgUrl}\n\nPlease share pricing and customization options.`;
+  lbCta.href=`https://wa.me/919845142893?text=${encodeURIComponent(waText)}`;
+  lbCta.target='_blank';
+  lbCta.rel='noopener';
 }
 function closeLightbox(){lightbox.classList.remove('open');}
 document.getElementById('lbClose').addEventListener('click',closeLightbox);
