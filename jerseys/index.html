@@ -17,11 +17,12 @@
 <meta name="twitter:title" content="Jersey Catalog — 150+ Custom Designs | Jersova Jersey">
 <meta name="twitter:description" content="Browse 157 custom jersey, shorts and pants designs — half sleeve, full sleeve, any colorway. Fully sublimated performance fabric, made to order.">
 <meta name="twitter:image" content="https://jersovajersey.in/images/logo.png">
-<link rel="icon" href="/images/logo.png">
+<link rel="icon" href="/images/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<link rel="preload" as="image" href="/images/catalog/jerseys/50.webp" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,7 +50,7 @@
   <div class="container">
     <nav>
       <a href="/" class="brand">
-        <img src="/images/logo.png" alt="Jersova Jersey logo">
+        <img src="/images/logo-192.png" alt="Jersova Jersey logo" width="40" height="40" decoding="async">
         <span>Jersova Jersey<small>Wear Your Identity</small></span>
       </a>
       <ul class="nav-links">
@@ -140,7 +141,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="brand"><img src="/images/logo.png" alt="logo"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
+        <a href="/" class="brand"><img src="/images/logo-192.png" alt="logo" width="40" height="40" decoding="async"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
         <p>Custom sports jerseys, shorts and pants — sublimated, sewn and shipped for teams that play to win.</p>
         <div class="footer-contact">
           <a href="mailto:jersovajersey@gmail.com">jersovajersey@gmail.com</a>
@@ -220,7 +221,7 @@ function renderCatalog(){
   grid.classList.remove('grid-fade'); void grid.offsetWidth; grid.classList.add('grid-fade');
   grid.innerHTML = currentList.map((item,i)=>`
     <div class="card" data-idx="${i}">
-      <div class="imgbox"><img src="${item.src}" alt="${item.name}" loading="lazy"></div>
+      <div class="imgbox"><img src="${item.src}" alt="${item.name}" loading="lazy" decoding="async"></div>
       <div class="view-btn">↗</div>
       <div class="info">
         <div class="tag">Jersova ${item.cat}</div>

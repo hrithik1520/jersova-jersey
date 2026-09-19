@@ -17,11 +17,12 @@
 <meta name="twitter:title" content="Jersova Jersey — Custom Sports Jerseys, Shorts & Pants">
 <meta name="twitter:description" content="Custom sublimated sports jerseys, shorts and training pants for teams worldwide. 150+ ready designs, free mockups, bulk pricing. Wear Your Identity.">
 <meta name="twitter:image" content="https://jersovajersey.in/images/logo.png">
-<link rel="icon" href="/images/logo.png">
+<link rel="icon" href="/images/logo-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+<link rel="preload" as="image" href="/images/hero.webp" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,7 +72,7 @@
   <div class="container">
     <nav>
       <a href="/" class="brand">
-        <img src="/images/logo.png" alt="Jersova Jersey logo">
+        <img src="/images/logo-192.png" alt="Jersova Jersey logo" width="40" height="40" decoding="async">
         <span>Jersova Jersey<small>Wear Your Identity</small></span>
       </a>
       <ul class="nav-links">
@@ -115,12 +116,12 @@
       <div class="hero-blob"></div>
       <div class="hero-card">
         <div class="hero-slideshow" id="heroSlideshow">
-          <img class="slide active" src="/images/hero.webp" alt="Jersova Jersey custom football kit">
-          <img class="slide" src="/images/catalog/jerseys/25.webp" alt="Star Strike jersey">
-          <img class="slide" src="/images/catalog/jerseys/50.webp" alt="Skyline Hex jersey">
-          <img class="slide" src="/images/catalog/jerseys/35.webp" alt="Blue Volt jersey">
-          <img class="slide" src="/images/catalog/jerseys/02.webp" alt="Hex Combat jersey">
-          <img class="slide" src="/images/catalog/jerseys/60.webp" alt="Cross Plaid jersey">
+          <img class="slide active" src="/images/hero.webp" alt="Jersova Jersey custom football kit" width="340" height="340" fetchpriority="high" decoding="async">
+          <img class="slide" src="/images/catalog/jerseys/25.webp" alt="Star Strike jersey" width="340" height="340" loading="lazy" decoding="async">
+          <img class="slide" src="/images/catalog/jerseys/50.webp" alt="Skyline Hex jersey" width="340" height="340" loading="lazy" decoding="async">
+          <img class="slide" src="/images/catalog/jerseys/35.webp" alt="Blue Volt jersey" width="340" height="340" loading="lazy" decoding="async">
+          <img class="slide" src="/images/catalog/jerseys/02.webp" alt="Hex Combat jersey" width="340" height="340" loading="lazy" decoding="async">
+          <img class="slide" src="/images/catalog/jerseys/60.webp" alt="Cross Plaid jersey" width="340" height="340" loading="lazy" decoding="async">
         </div>
         <div class="hero-slideshow-dots" id="heroDots"></div>
       </div>
@@ -134,10 +135,10 @@
 <!-- ============ IMAGE GALLERY STRIP ============ -->
 <div class="container">
   <div class="bleed-strip">
-    <div class="bleed-tile"><img src="/images/catalog/jerseys/25.webp" alt="Star Strike jersey" loading="lazy"><div class="bleed-cap">Star Strike</div></div>
-    <div class="bleed-tile"><img src="/images/catalog/jerseys/50.webp" alt="Skyline Hex jersey" loading="lazy"><div class="bleed-cap">Skyline Hex</div></div>
-    <div class="bleed-tile"><img src="/images/catalog/jerseys/02.webp" alt="Hex Combat jersey" loading="lazy"><div class="bleed-cap">Hex Combat</div></div>
-    <div class="bleed-tile"><img src="/images/catalog/jerseys/60.webp" alt="Cross Plaid jersey" loading="lazy"><div class="bleed-cap">Cross Plaid</div></div>
+    <div class="bleed-tile"><img src="/images/catalog/jerseys/25.webp" alt="Star Strike jersey" loading="lazy" decoding="async"><div class="bleed-cap">Star Strike</div></div>
+    <div class="bleed-tile"><img src="/images/catalog/jerseys/50.webp" alt="Skyline Hex jersey" loading="lazy" decoding="async"><div class="bleed-cap">Skyline Hex</div></div>
+    <div class="bleed-tile"><img src="/images/catalog/jerseys/02.webp" alt="Hex Combat jersey" loading="lazy" decoding="async"><div class="bleed-cap">Hex Combat</div></div>
+    <div class="bleed-tile"><img src="/images/catalog/jerseys/60.webp" alt="Cross Plaid jersey" loading="lazy" decoding="async"><div class="bleed-cap">Cross Plaid</div></div>
   </div>
 </div>
 
@@ -300,7 +301,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="brand"><img src="/images/logo.png" alt="logo"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
+        <a href="/" class="brand"><img src="/images/logo-192.png" alt="logo" width="40" height="40" decoding="async"><span>Jersova Jersey<small>Wear Your Identity</small></span></a>
         <p>Custom sports jerseys, shorts and pants — sublimated, sewn and shipped for teams that play to win.</p>
         <div class="footer-contact">
           <a href="mailto:jersovajersey@gmail.com">jersovajersey@gmail.com</a>
@@ -368,7 +369,7 @@ const featured=[
 ];
 document.getElementById('productGrid').innerHTML=featured.map((p,i)=>`
   <div class="card" data-idx="${i}">
-    <div class="imgbox"><img src="/images/${p.img}.webp" alt="${p.name}" loading="lazy"></div>
+    <div class="imgbox"><img src="/images/${p.img}.webp" alt="${p.name}" loading="lazy" decoding="async"></div>
     <div class="view-btn">↗</div>
     <div class="info">
       <div class="tag">Jersova ${p.tag}</div>

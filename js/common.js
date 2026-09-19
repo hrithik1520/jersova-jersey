@@ -6,7 +6,8 @@ window.addEventListener('load',()=>{
 
 /* ============ CUSTOM CURSOR ============ */
 const dot=document.querySelector('.cursor-dot'), ring=document.querySelector('.cursor-ring');
-if(dot&&ring){
+const hasFinePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+if(dot&&ring&&hasFinePointer){
   let mx=0,my=0,rx=0,ry=0;
   window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
   function loopCursor(){rx+=(mx-rx)*0.18;ry+=(my-ry)*0.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loopCursor);}
