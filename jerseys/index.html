@@ -128,6 +128,10 @@
     <div class="lightbox-tag" id="lbTag"></div>
     <div class="lightbox-cap" id="lbTitle"></div>
     <p class="lightbox-desc" id="lbDesc"></p>
+    <div class="lb-suggest" id="lbSuggest" hidden>
+      <div class="lb-suggest-title" id="lbSuggestTitle"></div>
+      <div class="lb-suggest-row" id="lbSuggestRow"></div>
+    </div>
     <div class="lightbox-actions">
       <a href="/contact/" class="btn btn-primary" id="lbCta">Enquire About This Design</a>
       <button class="btn btn-ghost" id="lbClose2">Close</button>
@@ -186,6 +190,7 @@
 <button class="totop" id="totop" aria-label="Back to top">↑</button>
 
 <script src="/js/common.js"></script>
+<script src="/js/catalog-colors.js"></script>
 <script>
 /* ============ CATALOG DATA ============ */
 // t-shirt source folders (jerseys + front) merged into one "tshirt" category, tagged by sleeve length
@@ -240,17 +245,16 @@ function renderCatalog(){
   if(window.bindCursorHover) window.bindCursorHover();
 }
 
+function setCategory(cat){
+  document.querySelectorAll('.tabs:not(#sleeveTabs) .tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.cat===cat));
+  activeCat = cat;
+  activeSleeve = 'all';
+  sleeveTabs.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.sleeve==='all'));
+  sleeveTabs.classList.toggle('show', cat==='tshirt');
+  renderCatalog();
+}
 document.querySelectorAll('.tabs:not(#sleeveTabs) .tab-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.tabs:not(#sleeveTabs) .tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCat = btn.dataset.cat;
-    activeSleeve = 'all';
-    sleeveTabs.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    sleeveTabs.querySelector('[data-sleeve="all"]').classList.add('active');
-    sleeveTabs.classList.toggle('show', activeCat==='tshirt');
-    renderCatalog();
-  });
+  btn.addEventListener('click',()=>setCategory(btn.dataset.cat));
 });
 sleeveTabs.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -289,8 +293,61 @@ function updateLightbox(){
   lbCta.href=`https://wa.me/919845142893?text=${encodeURIComponent(waText)}`;
   lbCta.target='_blank';
   lbCta.rel='noopener';
+  renderSuggestions(item);
+}
+
+/* ============ MATCHING SUGGESTIONS ============ */
+// t-shirt -> shorts + pants, shorts -> t-shirts + pants, pants -> t-shirts + shorts
+const suggestCats={tshirt:['shorts','pants'],shorts:['tshirt','pants'],pants:['tshirt','shorts']};
+const suggestLabel={tshirt:'T-Shirts',shorts:'Shorts',pants:'Pants'};
+const colorKey=item=>item.src.replace('/images/catalog/','').replace(/\.webp$/,'');
+const colorDist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
+// closest pair between the two items' dominant colors (lower = better match)
+function matchScore(a,b){
+  const ca=(window.CATALOG_COLORS||{})[colorKey(a)], cb=(window.CATALOG_COLORS||{})[colorKey(b)];
+  if(!ca||!cb) return Infinity;
+  let best=Infinity;
+  ca.forEach(x=>cb.forEach(y=>{best=Math.min(best,colorDist(x,y));}));
+  return best;
+}
+function renderSuggestions(item){
+  const box=document.getElementById('lbSuggest'), row=document.getElementById('lbSuggestRow');
+  const cats=suggestCats[item.cat]||[];
+  const picks=[];
+  cats.forEach(cat=>{
+    const ranked=allItems.filter(i=>i.cat===cat)
+      .map(i=>({i,score:matchScore(item,i)}))
+      .sort((a,b)=>a.score-b.score)
+      .slice(0,3).map(x=>x.i);
+    picks.push(...ranked);
+  });
+  if(!picks.length){box.hidden=true;return;}
+  document.getElementById('lbSuggestTitle').textContent=`Complete the kit — matching ${cats.map(c=>suggestLabel[c]).join(' & ')}`;
+  row.innerHTML=picks.map((p,n)=>`
+    <button type="button" class="lb-suggest-item" data-n="${n}" aria-label="View ${p.name}">
+      <img src="${p.src}" alt="${p.name}" loading="lazy">
+      <span>${p.name}</span>
+    </button>`).join('');
+  row.querySelectorAll('.lb-suggest-item').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const p=picks[+btn.dataset.n];
+      if(p.cat!==activeCat || (activeSleeve!=='all' && p.sleeve!==activeSleeve)) setCategory(p.cat);
+      lbIdx=currentList.indexOf(p);
+      updateLightbox();
+      lightbox.querySelector('.lightbox-inner').scrollTop=0;
+    });
+  });
+  box.hidden=false;
 }
 function closeLightbox(){lightbox.classList.remove('open');}
+(function openFromQuery(){
+  const key=new URLSearchParams(location.search).get('open');
+  if(!key) return;
+  const item=allItems.find(i=>i.src==='/images/catalog/'+key+'.webp');
+  if(!item) return;
+  setCategory(item.cat);
+  openLightbox(currentList.indexOf(item));
+})();
 document.getElementById('lbClose').addEventListener('click',closeLightbox);
 document.getElementById('lbClose2').addEventListener('click',closeLightbox);
 lightbox.addEventListener('click',e=>{ if(e.target===lightbox) closeLightbox(); });

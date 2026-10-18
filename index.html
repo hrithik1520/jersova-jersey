@@ -288,6 +288,10 @@
     <div class="lightbox-tag" id="lbTag"></div>
     <div class="lightbox-cap" id="lbTitle"></div>
     <p class="lightbox-desc" id="lbDesc"></p>
+    <div class="lb-suggest" id="lbSuggest" hidden>
+      <div class="lb-suggest-title">Complete the kit — matching Shorts &amp; Pants</div>
+      <div class="lb-suggest-row" id="lbSuggestRow"></div>
+    </div>
     <div class="lightbox-actions">
       <a href="/contact/" class="btn btn-primary" id="lbCta">Enquire About This Design</a>
       <a href="/jerseys/" class="btn btn-ghost">View Full Catalog</a>
@@ -346,6 +350,7 @@
 <button class="totop" id="totop" aria-label="Back to top">↑</button>
 
 <script src="/js/common.js"></script>
+<script src="/js/catalog-colors.js"></script>
 <script>
 /* ============ PROCESS LINE FILL ============ */
 const processFill=document.getElementById('processFill');
@@ -408,6 +413,36 @@ function updateLightbox(){
   lbCta.href=`https://wa.me/919845142893?text=${encodeURIComponent(waText)}`;
   lbCta.target='_blank';
   lbCta.rel='noopener';
+  renderSuggestions(item);
+}
+
+/* ============ MATCHING SUGGESTIONS ============ */
+// closest pair between two items' dominant colors (lower = better match)
+const COLORS=window.CATALOG_COLORS||{};
+function matchScore(a,b){
+  const ca=COLORS[a], cb=COLORS[b];
+  if(!ca||!cb) return Infinity;
+  let best=Infinity;
+  ca.forEach(x=>cb.forEach(y=>{best=Math.min(best,Math.hypot(x[0]-y[0],x[1]-y[1],x[2]-y[2]));}));
+  return best;
+}
+function renderSuggestions(item){
+  const key=item.img.replace('catalog/','');
+  const picks=[];
+  [['shorts','Shorts'],['pants','Training Pants']].forEach(([folder,label])=>{
+    Object.keys(COLORS).filter(k=>k.startsWith(folder+'/'))
+      .map(k=>({k,score:matchScore(key,k)}))
+      .sort((a,b)=>a.score-b.score).slice(0,3)
+      .forEach(x=>picks.push({k:x.k,folder,name:`${label} ${x.k.split('/')[1]}`}));
+  });
+  const box=document.getElementById('lbSuggest');
+  if(!picks.length){box.hidden=true;return;}
+  document.getElementById('lbSuggestRow').innerHTML=picks.map(p=>`
+    <a class="lb-suggest-item" href="/jerseys/?open=${p.k}" aria-label="View ${p.name}">
+      <img src="/images/catalog/${p.k}.webp" alt="${p.name}" loading="lazy">
+      <span>${p.name}</span>
+    </a>`).join('');
+  box.hidden=false;
 }
 function closeLightbox(){lightbox.classList.remove('open');}
 document.getElementById('lbClose').addEventListener('click',closeLightbox);
