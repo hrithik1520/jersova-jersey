@@ -40,4 +40,4 @@ Then open `http://localhost:8080`.
 ## Contact
 
 - Email: jersovajersey@gmail.com
-- WhatsApp: +91 98451 42893
+- WhatsApp: +91 91108 21591
